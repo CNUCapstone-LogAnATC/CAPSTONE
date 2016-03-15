@@ -29,7 +29,13 @@
     </div>
     <div class="jumbotron">
       <div class="container">
-        <h1>Hello, username!</h1>
+        <h1>
+          <?php
+            $name = $_POST["username"];
+            echo "Hello, " . $name;
+          ?>
+    
+         </h1>
       </div>
     </div>
 
@@ -38,13 +44,13 @@
       <div class="row">
         <div class="col-md-4">
           <h2>Injury</h2>
-          <form action="action_page.php">
+          <form action="write.php" method="post">
   <fieldset>
     <legend>Injury information:</legend>
     Date:<br>
     <input type="date" name="Date" value=""><br>
     Injury:<br>
-    <textarea name="myTextBox" cols="50" rows="5">
+    <textarea name="injury" cols="50" rows="5">
 Enter Injury Information...</textarea><br><br>
     <input type="submit" value="Submit">
   </fieldset>

@@ -43,21 +43,27 @@
             
      
 
-      <form class="form-signin">
+      <form class="form-signin" method='post' action='checklogin.php'>
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputIDnumber" class="sr-only">ID</label>
-        <input type="ID" id="inputID" class="form-control" placeholder="ID Number" required autofocus>
+        <input type="text" id="inputID" class="form-control" name="inputID" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="text" id="inputPassword" class="form-control" name="inputPassword" required>
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">Sign in</button>
       </form>
 
-   
+<!--
+     <?php
+        if (isset($_POST['submit'])) {
+            include 'php/login.php';
+        }
+        ?>
+-->
           </div>
 
           

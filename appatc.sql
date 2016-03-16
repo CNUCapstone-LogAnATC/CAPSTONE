@@ -99,18 +99,13 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `mydb`.`Injury` ;
 
 CREATE TABLE IF NOT EXISTS `mydb`.`Injury` (
-  `injuryID` INT NOT NULL,
+  `injuryID` INT NOT NULL AUTO_INCREMENT,
   `description` TEXT(255) NOT NULL,
-  `date` DATE NOT NULL,
-  `StudentAthlete_studentAthleteID` INT NOT NULL,
-  PRIMARY KEY (`injuryID`, `StudentAthlete_studentAthleteID`),
-  UNIQUE INDEX `injuryID_UNIQUE` (`injuryID` ASC),
-  INDEX `fk_Injury_StudentAthlete1_idx` (`StudentAthlete_studentAthleteID` ASC),
-  CONSTRAINT `fk_Injury_StudentAthlete1`
-    FOREIGN KEY (`StudentAthlete_studentAthleteID`)
-    REFERENCES `mydb`.`StudentAthlete` (`studentAthleteID`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  `date` TIMESTAMP NOT NULL,
+  `treatment` TEXT(255),
+ 
+  PRIMARY KEY (`injuryID`),
+  UNIQUE INDEX `injuryID_UNIQUE` (`injuryID` ASC)  )
 ENGINE = InnoDB;
 
 
@@ -160,3 +155,6 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+INSERT INTO `USER` values ('001','Ryan', 'Stutzman', 'Athlete', 'password');
+INSERT INTO `USER` values ('002','Stevie', 'Boose', 'Trainer', 'password');

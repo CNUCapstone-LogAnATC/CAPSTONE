@@ -4,6 +4,9 @@
     $password = "";
     $dbname = "mydb";
     $tbl_name = "User";
+    $trainer = "trainer";
+    $ustatus;
+   
     $link = mysql_connect($servername, $username, $password, $dbname);
 
     // Connect to server and select databse.
@@ -12,10 +15,13 @@
 //echo "1";
     //username and password sent from form
    
+  
+  
+       
         $myusername=$_POST['inputID'];
         $mypassword=$_POST['inputPassword'];
        // echo "2";
-
+   
         //To Protect MySQLinjection
         $myusername = stripslashes($myusername);
         $mypassword = stripslashes($mypassword);
@@ -28,9 +34,10 @@
         $count=mysql_num_rows($result);
         $sqlstatus = "SELECT userStatus FROM $tbl_name WHERE userID='$myusername' and password='$mypassword'";
             $status = mysql_query($sqlstatus);
-             // $status = mysqli_fetch_field($status);
+            //$row = mysql_fetch_object($status);
+            
 
-
+      
         // If result matched $myusername and $mypassword, table row must be 1 row
         if($count==1){
 
@@ -38,20 +45,25 @@
             $_session["userID"]= $myusername;
             $_session["mypassword"]= $mypassword; 
            
-           
-            echo "$status";
-            if($status == "trainer"){
-                header("location:TrainerHome.php");
+            while ($row = mysql_fetch_object($status )) {
+                              
+                    $ustatus= $row->userStatus;
                 }
-            elseif($status == "Athlete"){
-                    header("location:Athletehome.php");
+            
+        
+            if( $ustatus=="Trainer"){
+                header("location:TrainerHome.html");
                 }
             else{
-                header("location:index.php");
-                
-            }
+                    header("location:Athletehome.php");
+                echo $ustatus;
+                }
+//            else{
+//                header("location:index.php");
+//                
+//            }
+        //}
         }
-            
         else {
             echo "Wrong Username or Password";
             }

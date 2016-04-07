@@ -12,14 +12,14 @@
     // Connect to server and select databse.
     mysql_connect("$servername", "$username", "$password")or die("cannot connect"); 
     mysql_select_db("$dbname")or die("cannot select DB");
-//echo "1";
+
     //username and password sent from form
    
   
   
        
         $myusername=$_POST['inputID'];
-        $mypassword=$_POST['inputPassword'];
+        $mypassword=$_POST['Password'];
        // echo "2";
    
         //To Protect MySQLinjection
@@ -36,7 +36,8 @@
             $status = mysql_query($sqlstatus);
             //$row = mysql_fetch_object($status);
             
-
+        echo $myusername;
+        echo $mypassword;
       
         // If result matched $myusername and $mypassword, table row must be 1 row
         if($count==1){
@@ -52,17 +53,24 @@
             
         
             if( $ustatus=="Trainer"){
-                header("location:TrainerHome.html");
+                header("location:TrainerHome.php");
                 }
             else{
                     header("location:Athletehome.php");
-                echo $ustatus;
+               
                 }
 //            else{
 //                header("location:index.php");
 //                
 //            }
         //}
+        }
+//        else {
+//            header("location:index.php");
+//            echo "Wrong Username or Password";
+//            }
+
+?>
         }
         else {
             echo "Wrong Username or Password";

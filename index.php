@@ -48,7 +48,7 @@
         <label for="inputIDnumber" class="sr-only">ID</label>
         <input type="text" id="inputID" class="form-control" name="inputID" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="text" id="inputPassword" class="form-control" name="inputPassword" required>
+        <input type="text" id="inputPassword" class="form-control" name="Password" required>
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Remember me
@@ -56,14 +56,17 @@
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">Sign in</button>
       </form>
+              <br>
+              
+    <form class="newUser" method = 'post' action='newuser.php'>
+         <button class="btn btn-lg btn-primary btn-block" type="newUser" value="newUser">New User</button>
+              </form>          
 
-<!--
      <?php
         if (isset($_POST['submit'])) {
             include 'php/login.php';
         }
         ?>
--->
           </div>
 
           

@@ -36,8 +36,8 @@
             $status = mysql_query($sqlstatus);
             //$row = mysql_fetch_object($status);
             
-        echo $myusername;
-        echo $mypassword;
+        //echo $myusername;
+        //echo $mypassword;
       
         // If result matched $myusername and $mypassword, table row must be 1 row
         if($count==1){
@@ -69,11 +69,5 @@
 //            header("location:index.php");
 //            echo "Wrong Username or Password";
 //            }
-
-?>
-        }
-        else {
-            echo "Wrong Username or Password";
-            }
 
 ?>

@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Jumbotron Template for Bootstrap</title>
+    <title>Athlete Home</title>
 
     
     <link href="cover.css" rel="stylesheet">
@@ -21,9 +21,9 @@
 <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="AthleteHome.html">Home</a>
-          <a class="blog-nav-item" href="Athleteinjury">InjuryInfo</a>
-          <a class="blog-nav-item" href="index.html">Sign out</a>
+          <a class="blog-nav-item active" href="AthleteHome.php">Home</a>
+          <a class="blog-nav-item" href="Athleteinjury.php">InjuryInfo</a>
+          <a class="blog-nav-item" href="index.php">Sign out</a>
         </nav>
       </div>
     </div>
@@ -47,11 +47,11 @@
           <form action="write.php" method="post">
   <fieldset>
     <legend>Injury information:</legend>
-    Date:<br>
-    <input type="date" name="Date" value=""><br>
+
     Injury:<br>
+      <input type="text" name="ID">
     <textarea name="injury" cols="50" rows="5">
-Enter Injury Information...</textarea><br><br>
+</textarea><br><br>
     <input type="submit" value="Submit">
   </fieldset>
 </form>
@@ -84,3 +84,5 @@ Enter Injury Information...</textarea><br><br>
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
+
+       

@@ -83,13 +83,7 @@ Filter:     <input type="text" name="valueToFilter" ><br><br>
                
                
                </form>
-        <script>
-        $(function() {
-            $( "#sortable" ).sortable();
-            $( "#sortbale" ).disableSelection();
-        });
-        
-        </script>
+       
 <table class="sortable" width="600" border="10" cellpadding="10" cellspacing="1">
    
     <tr>

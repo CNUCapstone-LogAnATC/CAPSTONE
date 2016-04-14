@@ -16,7 +16,9 @@ $db_selected = mysql_select_db($dbname, $link);
 if (!$db_selected) {
     die('Can not use ' . $dbname . ': ' . mysql_error());
 }
-$sql="SELECT * FROM injury";
+
+
+$sql="SELECT * FROM injury WHERE UserID=872505";
 $records = mysql_query($sql);
 
 if(!mysql_query($sql))
@@ -43,17 +45,17 @@ if(!mysql_query($sql))
       <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="AthleteHome.html">Home</a>
-          <a class="blog-nav-item" href="Athleteinjury">InjuryInfo</a>
-          <a class="blog-nav-item" href="index.html">Sign out</a>
+          <a class="blog-nav-item active" href="AthleteHome.php">Home</a>
+          <a class="blog-nav-item" href="Athleteinjury.php">InjuryInfo</a>
+          <a class="blog-nav-item" href="index.php">Sign out</a>
         </nav>
       </div>
     </div>
     
  <h2 class="sub-header">Injury log</h2>
- <table class="table-responsive" width="600" border="10" cellpadding="10" cellspacing="1">
+      <table class="table-responsive" width="600" border="10" cellpadding="10" cellspacing="1">
    <tr>
-    <th>injuryID</th>
+
     <th>Descritption</th>
     <th>Date</th>
     <th>Treatment</th>
@@ -64,7 +66,6 @@ if(!mysql_query($sql))
 while ($Injury=mysql_fetch_array($records))
 {
     echo "<tr>";
-echo "<td>" . $Injury['injuryID'] ."</td>";
 echo "<td>" . $Injury['description'] ."</td>";
 echo "<td>" . $Injury['date'] ."</td>";
 echo "<td>" . $Injury['treatment'] ."</td>";
@@ -76,7 +77,11 @@ echo "<td>" . $Injury['treatment'] ."</td>";
         
         
         </table>
-          
+         
     
   </body>
 </html>
+
+    
+  
+

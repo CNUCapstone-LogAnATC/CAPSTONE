@@ -103,12 +103,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Injury` (
   `description` TEXT(255) NOT NULL,
   `date` TIMESTAMP NOT NULL,
   `treatment` TEXT(255),
-  `User_UserID` int not null,
+  `UserID` int not null,
  
   PRIMARY KEY (`injuryID`),
   UNIQUE INDEX `injuryID_UNIQUE` (`injuryID` ASC),
-  CONSTRAINT `user_UserID`
-   FOREIGN KEY (`user_UserID`)
+  CONSTRAINT `UserID`
+   FOREIGN KEY (`UserID`)
     REFERENCES `mydb`.`User` (`UserID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)

@@ -22,8 +22,9 @@ if (isset($_POST['update']))
     $UpdateQuery = "UPDATE injury SET treatment='$_POST[treatment]' WHERE injuryID='$_POST[hidden]'";
     mysql_query($UpdateQuery, $link);
 };
-$sql="SELECT * FROM injury";
+$sql = "SELECT injury.injuryID, injury.description, injury.date, injury.treatment, user.firstName, user.lastName FROM injury INNER JOIN user on injury.UserID=user.UserID";
 $records = mysql_query($sql);
+
 
 if(!mysql_query($sql))
 {
@@ -38,6 +39,7 @@ if(!mysql_query($sql))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+      
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
@@ -56,10 +58,9 @@ if(!mysql_query($sql))
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="Trainerhome.html">Home</a>
-          <a class="blog-nav-item" href="Athletes.html">Athletes</a>
-          <a class="blog-nav-item" href="Injurylog.html">Injury Log</a>
-          <a class="blog-nav-item" href="index.html">Sign out</a>
+          <a class="blog-nav-item active" href="Trainerhome.php">Home</a>
+          <a class="blog-nav-item" href="Injurylog.php">Injury Log</a>
+          <a class="blog-nav-item" href="index.php">Sign out</a>
         </nav>
       </div>
     </div>
@@ -72,21 +73,57 @@ if(!mysql_query($sql))
       </div>
 
       <h2 class="sub-header">Section title</h2>
-          <table class="table-responsive" width="600" border="10" cellpadding="10" cellspacing="1">
-   <tr>
+        
+<form name="filter_form" method="post" action="Injurylog.php">
+    
+Filter:     <input type="text" name="valueToFilter" ><br><br>
+            <input type="submit" name="filter" value="Filter"><br><br>
+               
+               
+               
+               
+               </form>
+        <script>
+        $(function() {
+            $( "#sortable" ).sortable();
+            $( "#sortbale" ).disableSelection();
+        });
+        
+        </script>
+<table class="sortable" width="600" border="10" cellpadding="10" cellspacing="1">
+   
+    <tr>
     <th>injuryID</th>
-    <th>Descritption</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Description</th>
     <th>Date</th>
     <th>Treatment</th>
     </tr>  
     
+       
+ <!--   $(document).ready(function() 
+    { 
+        $("#myTable").tablesorter(); 
+    } 
+);  
+    
+    $(document).ready(function() 
+    { 
+        $("#myTable").tablesorter( {sortList: [[0,0], [1,0]]} ); 
+    } 
+); -->
+
  <?php
     
 while ($Injury=mysql_fetch_array($records))
 {
     echo "<form action=injurylog.php method=post>";
     echo "<tr>";
+    
 echo "<td>"  . $Injury['injuryID'] . " </td>";
+echo "<td>"  . $Injury['firstName'] . " </td>";
+echo "<td>"  . $Injury['lastName'] . " </td>";
 echo "<td>"  . $Injury['description'] . " </td>";
 echo "<td>"  . $Injury['date'] . " </td>";
 echo "<td>" . "<input type=text name=treatment value= " . $Injury['treatment'] ." </td>";
@@ -100,30 +137,26 @@ echo "<td>" . "<input type=hidden name=hidden value=" . $Injury['injuryID'] . " 
         
         
         </table>
-              
-                  
-                  
-                
-        
+
         
             
           <div class="sidebar-module">
             <h4>Archives</h4>
             <ol class="list-unstyled">
-              <li><a href="#">March 2014</a></li>
-              <li><a href="#">February 2014</a></li>
-              <li><a href="#">January 2014</a></li>
-              <li><a href="#">December 2013</a></li>
-              <li><a href="#">November 2013</a></li>
-              <li><a href="#">October 2013</a></li>
-              <li><a href="#">September 2013</a></li>
-              <li><a href="#">August 2013</a></li>
-              <li><a href="#">July 2013</a></li>
-              <li><a href="#">June 2013</a></li>
-              <li><a href="#">May 2013</a></li>
-              <li><a href="#">April 2013</a></li>
+              <ul><a href="#">March 2014</a></ul>
+              <ul><a href="#">February 2014</a></ul>
+              <ul><a href="#">January 2014</a></ul>
+              <ul><a href="#">December 2013</a></ul>
+              <ul><a href="#">November 2013</a></ul>
+              <ul><a href="#">October 2013</a></ul>
+              <ul><a href="#">September 2013</a></ul>
+              <ul><a href="#">August 2013</a></ul>
+              <ul><a href="#">July 2013</a></ul>
+              <ul><a href="#">June 2013</a></ul>
+              <ul><a href="#">May 2013</a></ul>
+              <ul><a href="#">April 2013</a></ul>
             </ol>
-          </div>
+          </div> 
           <div class="sidebar-module">
             <h4>Elsewhere</h4>
             <ol class="list-unstyled">
@@ -132,7 +165,7 @@ echo "<td>" . "<input type=hidden name=hidden value=" . $Injury['injuryID'] . " 
               <li><a href="#">Facebook</a></li>
             </ol>
           </div>
-        </div><!-- /.blog-sidebar -->
+        </div>
 
  
 
@@ -156,3 +189,5 @@ echo "<td>" . "<input type=hidden name=hidden value=" . $Injury['injuryID'] . " 
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
+
+        

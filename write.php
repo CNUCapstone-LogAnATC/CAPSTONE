@@ -16,10 +16,13 @@ if (!$db_selected) {
     die('Can not use ' . $dbname . ': ' . mysql_error());
 }
 echo 'Thank You!';
-$value = $_POST['injury'];
 
-$sql = "INSERT INTO injury (description) VALUES ('$value')";
-$sql = "INSERT INTO injury (date) VALUES ('$value')"; 
+
+$value = $_POST['injury'];
+$ID = $_POST['ID'];
+
+$sql = "INSERT INTO injury (description, UserID) VALUES ('$value', '$ID')";
+
 
 if(!mysql_query($sql))
 {

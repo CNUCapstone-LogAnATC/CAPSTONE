@@ -53,7 +53,7 @@ if(!mysql_query($sql))
     </div>
     
  <h2 class="sub-header">Injury log</h2>
-      <table class="table-responsive" width="600" border="10" cellpadding="10" cellspacing="1">
+      <table class="sortable" width="600" border="10" cellpadding="10" cellspacing="1">
    <tr>
 
     <th>Descritption</th>

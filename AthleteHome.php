@@ -38,10 +38,11 @@
          </h1>
     </header>
       <!-- <div class="container"> -->
-        <nav>
+       <nav>
             <ul>
                 <li><a  href="AthleteHome.php">Home</a></li>
                 <li><a  href="Athleteinjury.php">InjuryInfo</a></li>
+                <li><a href="exercises.html">Exercises</a></li>
                 <li><a  href="logout.php">Sign out</a></li>
             </ul>
         </nav>

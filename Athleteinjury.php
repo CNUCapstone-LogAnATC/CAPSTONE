@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -17,8 +18,8 @@ if (!$db_selected) {
     die('Can not use ' . $dbname . ': ' . mysql_error());
 }
 
-
-$sql="SELECT * FROM injury WHERE UserID=872505";
+$ID = $_SESSION['UserID'];
+$sql="SELECT * FROM injury WHERE UserID='$ID'";
 $records = mysql_query($sql);
 
 if(!mysql_query($sql))
@@ -35,32 +36,38 @@ if(!mysql_query($sql))
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>AthleteInjuryLog</title>
-<script src="sorttable.js"></script>
-    <link href="cover.css" rel="stylesheet">
-
-    
+<script src="sorttable.js"></script> 
+<link href="show.css" type="text/css" rel="stylesheet"> 
   </head>
   <body>
-      <h1>Hello, Username!</h1>
-      <div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item active" href="AthleteHome.php">Home</a>
-          <a class="blog-nav-item" href="Athleteinjury.php">InjuryInfo</a>
-          <a class="blog-nav-item" href="index.php">Sign out</a>
+      <div id="wrapper">
+          <header>
+      <h1>
+          <?php
+            echo "Hello, " .$_SESSION['UserID']; 
+            ?>
+      </h1>
+         </header>
+      <!-- <div class="container"> -->
+        <nav>
+            <ul>
+                <li><a  href="AthleteHome.php">Home</a></li>
+                <li><a  href="Athleteinjury.php">InjuryInfo</a></li>
+                <li><a  href="logout.php">Sign out</a></li>
+            </ul>
         </nav>
-      </div>
-    </div>
-    
- <h2 class="sub-header">Injury log</h2>
-      <table class="sortable" width="600" border="10" cellpadding="10" cellspacing="1">
+     
+    <div id="content">
+ <h2 >Injury log</h2>
+      <table class="sortable"  width="600" border="10" cellpadding="10" cellspacing="1">
+          <thread>
    <tr>
 
     <th>Descritption</th>
     <th>Date</th>
     <th>Treatment</th>
     </tr>  
-    
+          </thread>
  <?php
     
 while ($Injury=mysql_fetch_array($records))
@@ -77,11 +84,23 @@ echo "<td>" . $Injury['treatment'] ."</td>";
         
         
         </table>
-         
-    
+          </div>
+          <footer>
+        Copyright &copy; APPanATC<br>
+          <a href="mailto:stevie.boose.12@cnu.edu" style="color:black">Stevie.boose.12@cnu.edu</a>
+          <a href="mailto:ryan.stutzman.11@cnu.edu" style="color:black">Ryan.stutzman.11@cnu.edu</a>
+      </footer>
+      </div>
+      <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
-
     
   
 

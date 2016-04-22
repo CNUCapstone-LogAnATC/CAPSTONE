@@ -7,44 +7,30 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    
 
     <title>AppAnATC! New User</title>
 
     <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
+    <link href="show.css" type="text/css" rel="stylesheet"> 
 
-    
   </head>
 
   <body>
 
-    <div class="site-wrapper">
-
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
+    
+             <div id="content">
               
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Features</a></li>
-                  
-                </ul>
-              </nav>
-            </div>
-          </div>
+            
 
-          <div class="inner cover">
-            <h1 class="cover-heading">CREATE USER</h1>
+          
+            <h2 class="cover-heading">Create New User</h2>
          
             
      
 
-      <form class="form-createUser" method='post' action= 'newuserwrite.php'>
-        <h2 class="form-createUser-heading">Please Create New User</h2>
+      <form id="return" method='post' action= 'newuserwrite.php'>
+        <h3 class="form-createUser-heading">Please Create New User</h3>
         <label for="inputIDnumber" class="sr-only">ID</label>
         <input type="text"  name="inputID" required autofocus>
           <br>
@@ -80,16 +66,8 @@
               
             
         ?>
-          </div>
-
           
-
-        </div>
-
-      </div>
-
-    </div>
-
+                 </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

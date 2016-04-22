@@ -49,6 +49,13 @@
           <br>
         <label for="inputUserType" class="sr-only">UserType</label>
         <input type="text"  name="inputUserType" required>
+        <br>
+        <br>
+        <label for="inputTeam" class="sr-only">Sports Team</label>
+        <input type="text"  name="inputTeam">
+          <p style="color:red">*Leave team blank if you are a trainer</p>
+          <br>
+          <br>
           <br> 
           <br>
         <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">Sign in</button>

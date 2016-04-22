@@ -1,0 +1,59 @@
+body	{background-color: #666666;
+        
+	color: #000000;}
+h1	{color:#FFF;
+    padding-left: 20px}
+h2	{color: #000;
+    text-align: center;}
+h3  {color:black;}
+#content ul{}
+#wrapper{padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right; 10px;
+    padding-top: 10px;
+	margin: auto;
+	background-color: #004376;
+	min-width: 960px;
+	box-shadow: 0 0 40px #000;
+    border-radius: 25px;}
+nav	{font-weight: bold;
+	text-align: center;
+    float: left;
+	width: 190px;}
+nav ul	{list-style-type: none;
+	padding-left: 0px;
+	font-size: 1.2em;}
+nav a	{text-decoration: none;
+            display: inline;}
+nav :link{color: #FFF;}
+nav :visited{color: #FFF;}
+nav :hover{color:#000;}
+#content{padding-top: 1px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #FFF;
+	margin-left: 200px;
+    margin-right: 130px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 20px #000;
+    border-radius: 25px;}
+#content img{float: left;
+	padding-right: 40px;
+	padding-left: 40px;}
+#content div{padding-left: 40px;
+	padding-right: 40px;
+	overflow: auto;}
+#align {text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+#return {text-align: center;
+    padding-top: 30px;
+    padding-bottom: 100px;
+    padding-left: 100px;
+    padding-right: 100px;   
+}
+#footer {padding-left: 10px;}

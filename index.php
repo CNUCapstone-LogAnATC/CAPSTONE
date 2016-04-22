@@ -7,43 +7,28 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    
 
     <title>AppAnATC!</title>
 
     <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
+    <!--  <link href="cover.css" rel="stylesheet"> -->
 
-    
+    <link href="show.css" type="text/css" rel="stylesheet"> 
+ 
   </head>
 
   <body>
 
-    <div class="site-wrapper">
 
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Features</a></li>
-                  
-                </ul>
-              </nav>
-            </div>
-          </div>
-
-          <div class="inner cover">
-            <h1 class="cover-heading">LOGIN</h1>
-            <p class="lead">Login to start using all the features of Trainer Aid</p>
+           
+<center>
+    <div id="content">
+          <div id="align">
+            <h1>LOGIN</h1>
+            <p>Login to start using all the features of Trainer Aid</p>
             
-     
-
-      <form class="form-signin" method='post' action='checklogin.php'>
+      <form id="login" method='post' action='checklogin.php'>
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputIDnumber" class="sr-only">ID</label>
         <input type="text" id="inputID" class="form-control" name="inputID" required autofocus>
@@ -67,16 +52,9 @@
             include 'php/login.php';
         }
         ?>
-          </div>
-
-          
-
         </div>
-
       </div>
-
-    </div>
-
+      </center>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -86,4 +64,3 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
-</html>

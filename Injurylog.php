@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -39,7 +40,7 @@ if(!mysql_query($sql))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<script src="sorttable.js"></script>
+      <script src="sorttable.js"></script>
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
@@ -48,42 +49,37 @@ if(!mysql_query($sql))
 
     
     <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
-
+<link href="show.css" type="text/css" rel="stylesheet"> 
     
   </head>
 
   <body>
-
-    <div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item active" href="Trainerhome.php">Home</a>
-          <a class="blog-nav-item" href="Injurylog.php">Injury Log</a>
-          <a class="blog-nav-item" href="index.php">Sign out</a>
+      <div id="wrapper">
+      <header>
+       <h1>
+            <?php
+            echo "Hello, " .$_SESSION['UserID']; 
+            ?> 
+          </h1>
+</header>
+      <!-- <div class="container"> -->
+        <nav>
+            <ul>
+                <li><a  href="Trainerhome.php">Home</a></li>
+                <li><a  href="Injurylog.php">Injury Log</a></li>
+                <li><a  href="logout.php">Sign out</a></li>
+            </ul>
         </nav>
-      </div>
-    </div>
-
-    <div class="container">
-
-      <div class="blog-header">
-        <h1 class="blog-title">Injury Log</h1>
-        <p class="lead blog-description">Log of injuries.</p>
-      </div>
-
-      <h2 class="sub-header">Section title</h2>
+     
+<div id="content">
+      <h2>Injury log </h2>
         
-<form name="filter_form" method="post" action="Injurylog.php">
+<p>Search</p>
+    <form name="searchDB" method="post" action="searchresults.php">
+    <input name="search" type="text" size="40" maxlength="50"/>
+    <input type="submit" name="submit" value="Search" />
     
-Filter:     <input type="text" name="valueToFilter" ><br><br>
-            <input type="submit" name="filter" value="Filter"><br><br>
-               
-               
-               
-               
-               </form>
-       
+    </form>
 <table class="sortable" width="600" border="10" cellpadding="10" cellspacing="1">
    
     <tr>
@@ -137,42 +133,27 @@ echo "<td>" . "<input type=hidden name=hidden value=" . $Injury['injuryID'] . " 
           <div class="sidebar-module">
             <h4>Archives</h4>
             <ol class="list-unstyled">
-              <ul><a href="#">March 2014</a></ul>
-              <ul><a href="#">February 2014</a></ul>
-              <ul><a href="#">January 2014</a></ul>
-              <ul><a href="#">December 2013</a></ul>
-              <ul><a href="#">November 2013</a></ul>
-              <ul><a href="#">October 2013</a></ul>
-              <ul><a href="#">September 2013</a></ul>
-              <ul><a href="#">August 2013</a></ul>
-              <ul><a href="#">July 2013</a></ul>
-              <ul><a href="#">June 2013</a></ul>
-              <ul><a href="#">May 2013</a></ul>
-              <ul><a href="#">April 2013</a></ul>
+              <ul><a href="#">2016</a></ul>
+              <ul><a href="#">2015</a></ul>
+              <ul><a href="#">2014</a></ul>
+              <ul><a href="#">2013</a></ul>
+              <ul><a href="#">2012</a></ul>
             </ol>
           </div> 
-          <div class="sidebar-module">
-            <h4>Elsewhere</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Facebook</a></li>
-            </ol>
-          </div>
-        </div>
+          
+    
 
  
 
-    
+      </div>
 
-    <footer class="blog-footer">
-      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
+    <footer>
+        Copyright &copy; APPanATC<br>
+          <a href="mailto:stevie.boose.12@cnu.edu" style="color:black">Stevie.boose.12@cnu.edu</a>
+          <a href="mailto:ryan.stutzman.11@cnu.edu" style="color:black">Ryan.stutzman.11@cnu.edu</a>
+      </footer>
 
-
+      </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -34,29 +35,29 @@ if(!mysql_query($sql))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Home</title>
+    <title>Trainer Home</title>
 
-    <link href="cover.css" rel="stylesheet">
+      <link href="show.css" type="text/css" rel="stylesheet"> 
+
   </head>
   <body>
       
-      <center>
+      <div id="wrapper">
+          <header>
     <h1>
           <?php
-            $name = $_POST["username"];
-            echo "Hello, " . $name;
-          ?>
+            echo "Hello, " .$_SESSION['UserID']; 
+            ?>
           </h1>
-          <div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item active" href="Trainerhome.php">Home</a>
-          <a class="blog-nav-item" href="Injurylog.php">Injury Log</a>
-          <a class="blog-nav-item" href="index.php">Sign out</a>
+          </header>
+          <nav>
+            <ul>
+                <li><a  href="Trainerhome.php">Home</a></li>
+                <li><a  href="Injurylog.php">Injury Log</a></li>
+                <li><a  href="logout.php">Sign out</a></li>
+            </ul>
         </nav>
-      </div>
-    </div>
-
+<div id="content">
       <h2><a href="Injurylog.php">Recent Injuries</a></h2>
           
           
@@ -197,11 +198,20 @@ document.write(cal);
 
 //  End -->
           </script>
-    <h2>Treatment</h2>
-    <h2>Schedule</h2>
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-</center>
-<br/><div style="clear:both"></div><div><a target="_blank" href="http://www.htmlbestcodes.com/"><span style="font-size: 8pt; text-decoration: none">HTML Best Codes</span></a></div>
+    
+    <h2><a href="Injurylog.php">Treatment</a></h2>
+   
+    
+    <h2><a href="http://www.cnusports.com">Schedule</a></h2>
+   
+          </div>
+          <footer>
+       Copyright &copy; APPanATC<br>
+          <a href="mailto:stevie.boose.12@cnu.edu" style="color:black">Stevie.boose.12@cnu.edu</a>
+          <a href="mailto:ryan.stutzman.11@cnu.edu" style="color:black">Ryan.stutzman.11@cnu.edu</a>
+      </footer>
+      </div>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

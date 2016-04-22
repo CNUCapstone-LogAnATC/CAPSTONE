@@ -18,10 +18,13 @@ if (!$db_selected) {
     die('Can not use ' . $dbname . ': ' . mysql_error());
 }
 
-// if(isset($_POST['search']))
-//{
-    
-//}
+if (isset($_POST['update']))
+{
+    $UpdateQuery = "UPDATE injury SET treatment='$_POST[treatment]' WHERE injuryID='$_POST[hidden]'";
+    mysql_query($UpdateQuery, $link);
+};
+
+
  $thesearch = $_POST['search'];
 $sql="SELECT injury.injuryID, injury.description, injury.date, injury.treatment, user.firstName, user.lastName FROM injury INNER JOIN user on injury.UserID=user.UserID WHERE firstName LIKE '%".$_POST['search']."%' 
 OR description LIKE '%".$_POST['search']."%'
@@ -79,7 +82,7 @@ if(!mysql_query($sql))
             <ul>
                 <li><a  href="Trainerhome.php">Home</a></li>
                 <li><a  href="Injurylog.php">Injury Log</a></li>
-                <li><a href="Listathletes.php">List of Athletes</a></li>
+                <li><a  href="Listathletes.php">List of Athletes</a></li>
                 <li><a  href="logout.php">Sign out</a></li>
             </ul>
         </nav>
@@ -88,7 +91,7 @@ if(!mysql_query($sql))
       <h2>Injury log </h2>
         <p>Search Results</p>
     <table class="sortable" width="600" border="10" cellpadding="10" cellspacing="1">
-   <thread>
+  
     <tr>
     <th>injuryID</th>
     <th>First Name</th>
@@ -97,12 +100,12 @@ if(!mysql_query($sql))
     <th>Date</th>
     <th>Treatment</th>
     </tr>  
-        </thread>
+    
         <?php
     
 while ($Injury=mysql_fetch_array($search_query))
 {
-    echo "<form action=injurylog.php method=post>";
+    echo "<form action=Injurylog.php method=post>";
     echo "<tr>";
     
 echo "<td>"  . $Injury['injuryID'] . " </td>";
@@ -110,36 +113,18 @@ echo "<td>"  . $Injury['firstName'] . " </td>";
 echo "<td>"  . $Injury['lastName'] . " </td>";
 echo "<td>"  . $Injury['description'] . " </td>";
 echo "<td>"  . $Injury['date'] . " </td>";
-echo "<td>"  . $Injury['treatment'] . " </td>";
-//echo "<td>" . "<input type=text name=treatment value= " . $Injury['treatment'] ." </td>";
-//echo "<td>" . "<input type=hidden name=hidden value=" . $Injury['injuryID'] . " </td>";
-    //echo "<td>" . "<input type=submit name=update value=update" . " </td>";
+echo "<td>" . "<input type=text name=treatment value= " . $Injury['treatment'] ." </td>";
+echo "<td>" . "<input type=hidden name=hidden value=" . $Injury['injuryID'] . " </td>";
+    echo "<td>" . "<input type=submit name=update value=update" . " </td>";
     echo "</tr>";
     echo "</form>";
 }
 ?>
         
-     
-
-    
-       
- <!--   $(document).ready(function() 
-    { 
-        $("#myTable").tablesorter(); 
-    } 
-);  
-    
-    $(document).ready(function() 
-    { 
-        $("#myTable").tablesorter( {sortList: [[0,0], [1,0]]} ); 
-    } 
-); -->
-
-        
-        
-        
         </table>
 
+    
+    
       </div>
 
     <footer>

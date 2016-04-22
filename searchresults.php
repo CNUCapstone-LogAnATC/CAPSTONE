@@ -79,6 +79,7 @@ if(!mysql_query($sql))
             <ul>
                 <li><a  href="Trainerhome.php">Home</a></li>
                 <li><a  href="Injurylog.php">Injury Log</a></li>
+                <li><a href="Listathletes.php">List of Athletes</a></li>
                 <li><a  href="logout.php">Sign out</a></li>
             </ul>
         </nav>

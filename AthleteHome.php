@@ -1,3 +1,13 @@
+<?php
+            session_start();
+     //if (isset($_SESSION['UserID'])){
+        
+    //}
+   // else {
+      //  echo 'Please Log in.';
+   // }
+            
+          ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,68 +22,66 @@
     <title>Athlete Home</title>
 
     
-    <link href="cover.css" rel="stylesheet">
+    <link href="show.css" type="text/css" rel="stylesheet"> 
 
 
   </head>
 
   <body>
-<div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item active" href="AthleteHome.php">Home</a>
-          <a class="blog-nav-item" href="Athleteinjury.php">InjuryInfo</a>
-          <a class="blog-nav-item" href="index.php">Sign out</a>
-        </nav>
-      </div>
-    </div>
-    <div class="jumbotron">
-      <div class="container">
-        <h1>
-          <?php
-            $name = $_POST["username"];
-            echo "Hello, " . $name;
-          ?>
-    
+      
+<div id="wrapper">
+    <header>
+    <h1>
+            <?php
+            echo "Hello, " .$_SESSION['UserID']; 
+            ?>
          </h1>
-      </div>
-    </div>
-
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
+    </header>
+      <!-- <div class="container"> -->
+        <nav>
+            <ul>
+                <li><a  href="AthleteHome.php">Home</a></li>
+                <li><a  href="Athleteinjury.php">InjuryInfo</a></li>
+                <li><a  href="logout.php">Sign out</a></li>
+            </ul>
+        </nav>
+    
+    
+        <div id="content">
           <h2>Injury</h2>
+            <div id="injury">
           <form action="write.php" method="post">
   <fieldset>
     <legend>Injury information:</legend>
 
     Injury:<br>
-      <input type="text" name="ID">
+    <!-- <input type="text" name="ID"> -->
     <textarea name="injury" cols="50" rows="5">
 </textarea><br><br>
     <input type="submit" value="Submit">
   </fieldset>
 </form>
-        </div>
-        <div class="col-md-4">
-          <h2>Team Information</h2>
-          <p>Team meeting is scheduled for today </p>
-       </div>
-        <div class="col-md-4">
-          <h2>Health Tips</h2>
-            <p>Avoid to much salt in your daily diet</p>
-        </div>
       </div>
+            
+    
+          <h3>Team Information</h3>
+          <p>Team meeting is scheduled for today </p>
+       
+        
+          <h3>Health Tips</h3>
+            <p>Avoid to much salt in your daily diet</p>
+        
 
       <hr>
-
+    </div>
       <footer>
-        <p>&copy; 2015 Company, Inc.</p>
+        Copyright &copy; APPanATC<br>
+          <a href="mailto:stevie.boose.12@cnu.edu" style="color:black">Stevie.boose.12@cnu.edu</a>
+          <a href="mailto:ryan.stutzman.11@cnu.edu" style="color:black">Ryan.stutzman.11@cnu.edu</a>
       </footer>
-    </div> <!-- /container -->
-
-
+    
+      
+      </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -84,5 +92,3 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
-
-       

@@ -204,7 +204,109 @@ document.write(cal);
    
     
     <h2><a href="http://www.cnusports.com">Schedule</a></h2>
-   
+   <h2 >Rehabilitaion Numbers</h2>
+      <table class="sortable"  width="600" border="10" cellpadding="10" cellspacing="1">
+              <thead>
+                <tr>
+                  <th>Treatment Number</th>
+                  <th>Sets</th>
+                  <th>Exercises</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>R1</td>
+                  <td>3x10, 3x10seconds</td>
+                  <td>Cold whirlpool ABC's, Balance foam</td>
+                 
+                </tr>
+                <tr>
+                  <td>R2</td>
+                  <td>10 minutes</td>
+                  <td>Cold Whirlpool</td>
+                  
+                </tr>
+                <tr>
+                  <td>R3</td>
+                  <td>3x20, 3x15</td>
+                  <td>Dynamic Stretching, Band stretches, foam roller</td>
+            
+                </tr>
+                <tr>
+                  <td>R4</td>
+                  <td>3x20</td>
+                  <td>Hand Mobility</td>
+                  
+                </tr>
+                <tr>
+                  <td>R5</td>
+                  <td>10 minutes</td>
+                  <td>Ice</td>
+                  
+                </tr>
+                <tr>
+                  <td>R6</td>
+                  <td>10 minutes</td>
+                  <td>Warm whirlpool</td>
+                 
+                </tr>
+                <tr>
+                  <td>R7</td>
+                  <td></td>
+                  <td>Injury Evaluation/Report to training room</td>
+                  
+                </tr>
+                <tr>
+                  <td>R8</td>
+                  <td>10-15 minutes</td>
+                  <td>Electrical Stimulation/Ultrasound</td>
+                  
+                </tr>
+                <tr>
+                  <td>R9</td>
+                  <td>3x10, 3x20</td>
+                  <td>Calf raises, Slant board</td>
+                  
+                </tr>
+                <tr>
+                  <td>R10</td>
+                  <td>7-10 minutes</td>
+                  <td>Heat pack</td>
+                  
+                </tr>
+                <tr>
+                  <td>R11</td>
+                  <td></td>
+                  <td>Tape before practice</td>
+                  
+                </tr>
+                <tr>
+                  <td>R12</td>
+                  <td>10 minutes</td>
+                  <td>Ice and elevate</td>
+                  
+                </tr>
+                <tr>
+                  <td>R13</td>
+                  <td></td>
+                  <td>Concussion Protocal</td>
+                  
+                </tr>
+                <tr>
+                  <td>R14</td>
+                  <td></td>
+                  <td>See team chiropracter</td>
+                  
+                </tr>
+                <tr>
+                  <td>R15</td>
+                  <td></td>
+                  <td>See team doctor</td>
+                 
+                </tr>
+              </tbody>
+            </table>
           </div>
           <footer>
        Copyright &copy; APPanATC<br>
